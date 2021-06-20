@@ -1,0 +1,99 @@
+\section{一维布朗运动模型下\\非禁闭背景势场的涨落定理}
+研究外加势场作用下的过阻尼布朗运动粒子，其郎之万方程可以写为
+\begin{equation}
+\dot{x}_{t}=-\frac{V^{\prime}\left(x_{t}, \lambda_{t}\right)}{\gamma}+\sqrt{2 D} \xi_{t}
+\label{equ:langzw}
+\end{equation}
+其中$V(x_t,\lambda_t)$依赖于外部控制的参数$\lambda_t$，并且$V(x_t,\lambda_t)$是一个在无穷远处渐进平坦的势阱，其衰减的速度不慢于$1/x$，有
+\begin{equation}
+\lim\limits_{x\rightarrow\pm\infty}V(x_t,\lambda_t)=0
+\end{equation}
+$D$ 为扩散常数，$\gamma$ 为阻力，$\xi_t$ 为高斯白噪音，满足
+\begin{equation}
+\left\langle\xi_t\right\rangle=0
+\end{equation}
+\begin{equation}
+\left\langle\xi_{t} \xi_{t^{\prime}}\right\rangle=\delta\left(t-t^{\prime}\right)
+\end{equation}
+系统的PDF$P(x,t)$满足的Fokker-Planck方程为
+\begin{equation}
+\frac{\partial}{\partial t}P(x,t)=-\frac{\partial}{\partial x}\frac{\langle\delta x\rangle}{\delta t}P(x,t)+\frac{\partial^2}{\partial t^2}\frac{1}{2}\frac{\langle(\delta x)^2\rangle}{\delta t}P(x,t)
+\end{equation}
+其中$\delta x$可以对式(\ref{equ:langzw})两边在$\delta t$时间内积分，得到
+\begin{equation}
+\delta x=-\frac{V'(x_t,\lambda_t)}{\gamma}\delta t+\sqrt{2D}\int^{t+\delta t}_{t}\xi_{t'}\mathrm{d}t'
+\end{equation}
+两边对系综取平均，利用白噪声均值为0的特点得到
+\begin{equation}
+\frac{\langle\delta x\rangle}{\delta t}=-\frac{V'(x_t,\lambda_t)}{\gamma}
+\end{equation}
+对于$\frac{\langle(\delta x)^2\rangle}{\delta t}$，首先将$\delta x$取平方，同时注意到$\delta t$项的贡献为0，因此只剩下最后一项有贡献，有
+\begin{equation}
+\frac{\langle(\delta x)^2\rangle}{\delta t}=\lim\limits_{\delta t\rightarrow0}\frac{2D}{\delta t}\int^{t+\delta t}_t\mathrm{d}t'\int^{t+\delta t}_t\mathrm{d}t''\left\langle\xi_t\xi_{t'}\right\rangle=2D
+\end{equation}
+代入Fokker-Planck方程得
+\begin{equation}
+\partial_{t} P(x, t)=L P(x, t)
+\end{equation}
+其中$L$是Fokker-Planck算符
+\begin{equation}
+L=\left(D \partial_{x}^{2}+\frac{1}{\gamma} \partial_{x} V^{\prime}\right)
+\label{equ:FPoper}
+\end{equation}
+对于一个固定的$\lambda_t$和足够长的时间下，$P(x,t)$会收敛于
+\begin{equation}
+P_{\mathrm{GB}}\left(x, t, \lambda_{t}\right)=\frac{e^{-\frac{x^{2}}{4 D \tau}-\beta V\left(x, \lambda_{t}\right)}}{N\left(t, \lambda_{t}\right)}
+\label{equ:PDF}
+\end{equation}
+其中$\beta=\frac{1}{\mathrm{k}_{0}T}$，$N(t,\lambda_t)$是归一化常数，满足
+\begin{equation}
+N\left(t, \lambda_{t}\right)=\int_{-\infty}^{\infty} e^{-\frac{x^{2}}{4 D t}-\beta V\left(x, \lambda_{t}\right)} \mathrm{d} x
+\end{equation}
+
+考虑一个特殊情况：在$t=0$时，粒子全部被置于势阱内。从$t=0$到$t=t_0$这段时间内，系统处于弛豫使得在$t=t_0$时概率密度大致可以由$P_{\mathrm{GB}}(x,t_0)$给出。从$t=t_0$到$t=t_1$，势场由于外部控制的参数$\lambda_t$介入而发生改变，直到$t=t_1$时势场停止变化，系统的概率密度重新回到弛豫过程的分布，如式(\ref{equ:PDF})所示。然而这种弛豫过程不会对最终的结果产生影响，在这种情况下，定义由$\lambda_t$产生的广义力\cite{streissnigWorkFluctuationTheorem2021}
+\begin{equation}
+F_{\lambda_t}=-\frac{\partial V(x_t,\lambda_t)}{\partial\lambda_t}
+\end{equation}
+由外部参数$\lambda_t$ 沿着时间$t$ 依赖的轨道所做的功可以利用功率对时间的积分表示为
+\begin{equation}
+W_{t}=-\int_{t_{0}}^{t} \dot{\lambda}_{\tau}F_{\lambda_{\tau}}\mathrm{d} \tau=\int_{t_{0}}^{t} \dot{\lambda}_{\tau} \frac{\partial V\left(x_{\tau}, \lambda_{\tau}\right)}{\partial \lambda_{\tau}} \mathrm{d} \tau=\int_{t_{0}}^{t} \frac{\partial V\left(x_{\tau}, \tau\right)}{\partial \tau} \mathrm{d} \tau
+\label{equ:Wt}
+\end{equation}
+
+为了简单起见，我们考虑势的变化在瞬间完成，数学上可以表示为$V\left(x, \Theta\left(t-t_{0}\right)\right)$，这里可以很自然地把外部控制的参数$\lambda_t$表示为
+\begin{equation}
+\lambda_{t}=\Theta\left(t-t_{0}\right)
+\end{equation}
+定义
+\begin{equation}
+\Delta V(x):=V(x, 1)-V(x, 0)
+\end{equation}
+利用这一符号可以把势写为
+\begin{equation}
+V\left(x, \lambda_{t}\right)=V(x, 0)+\lambda_{t} \Delta V(x)
+\label{equ:V-x-lambda}
+\end{equation}
+把式(\ref{equ:V-x-lambda})代入到式(\ref{equ:Wt})中，由于$\dot{\lambda}_t=\delta{t-t_0}$为一$\delta$函数形式，可以把依赖于轨迹的功$W_t$表示为变化前后在$x_{t_0}$处的势之差表示，得
+\begin{equation}
+W_{t}=\Delta V\left(x_{t_{0}}\right)
+\end{equation}
+利用$t=t_0$时的概率密度分布可以计算
+\begin{equation}
+\left\langle e^{-\beta W_{t}}\right\rangle=\int_{-\infty}^{\infty} e^{-\Delta \beta V(x)} P_{\mathrm{GB}}\left(x, t_{0}, 0\right) \mathrm{d} x=\frac{\int_{-\infty}^{\infty} e^{-\frac{x^{2}}{4 D t_{0}}-\beta V(x, 1)} \mathrm{d} x}{N\left(t_{0}, 0\right)}
+\end{equation}
+其中
+\begin{equation}
+N(t_0,0)=\int_{-\infty}^{\infty} e^{-\frac{x^{2}}{4 D t_{0}}-\beta V(x, 0)} \mathrm{d} x
+\end{equation}
+定义
+\begin{equation}
+\Delta G=-\beta \ln \left(\frac{N\left(t_{0}, 0\right)}{N\left(t_{0}, 1\right)}\right)=-\beta \ln \left(\frac{\int_{-\infty}^{\infty} e^{-\frac{x^{2}}{4 D t_{0}}-\beta V(x, 1)} \mathrm{d} x}{\int_{-\infty}^{\infty} e^{-\frac{x^{2}}{4 D t_{0}}-\beta V(x, 0)} \mathrm{d} x}\right)
+\end{equation}
+可以得到
+\begin{equation}
+\left\langle e^{-\beta W_{t}}\right\rangle=e^{-\beta \Delta G}
+\end{equation}
+与Jarzinski等式类似，这个结果不依赖于系统是否存在平衡态，更加一般的形式为
+\begin{equation}
+\langle W_{t}\rangle\geqslant\Delta G
+\end{equation}

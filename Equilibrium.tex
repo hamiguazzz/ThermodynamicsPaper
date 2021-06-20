@@ -1,0 +1,28 @@
+\section{内禀平衡态的性质}
+我们将势阱内的开放系作为我们讨论的对象。
+
+由于我们讨论的是经典气体系统，故在平衡态时，气体满足玻尔兹曼分布，即
+\begin{equation}\label{3.62}
+  \mathrm{d} N(\boldsymbol{q}, \boldsymbol{p}) \approx \frac{1}{h^{D}} \mathrm{e}^{[\mu-\epsilon(\boldsymbol{q}, \boldsymbol{p})] / k_{0} T} \mathrm{~d} \mu(\boldsymbol{q}, \boldsymbol{p})
+\end{equation}
+其中，$\mathrm{d} N(\boldsymbol{q}, \boldsymbol{p})$  表示相空间  $(\boldsymbol{q}, \boldsymbol{p})$  附近的粒子数。$\mu-\epsilon(\boldsymbol{q}, \boldsymbol{p})$  是粒子在相空间  $(\boldsymbol{q}, \boldsymbol{p})$ 处的的能量，在非相对论情况下，  $\epsilon(\boldsymbol{q}, \boldsymbol{p})=\frac{\langle\vec{p}, \vec{p}\rangle}{2 m}+V(q)$。
+
+将能量的表达式代入玻尔兹曼分布中并积分，得到粒子数分布。由于我们考虑的系统是势阱内的粒子，故积分区域为 $-\sqrt{2(V_{0}-V(q))}<p<\sqrt{2(V_{0}-V(q))},-q_{0}<q<q_{0}$,$q_{0}$  满足  $V(q_{0})=V_{0}$.
+$$
+N=\int_{-q_{0}}^{q_{0}} e^{-\frac{V(q)}{k_{0}T}}A_{D-1}q^{2} d q \frac{e^{\mu}}{h^{D}} \cdot \int_{-\sqrt{2\left(V_{0}-V(q)\right)}}^{\sqrt{2\left(V_{0}-V(q)\right)}} e^{-\frac{p^{2}}{2 m k_{0} T}} p^{2} A_{ D-1} dp
+$$
+代入特定的势能表达式，即可得到平衡态时势阱内粒子数与温度的关系。
+\section{非禁闭势中的玻尔兹曼方程}
+为了得到非禁闭势中的演化情况，让我们考虑非禁闭势情况下的玻尔兹曼方程。由于我们考虑的空间区域是开放的，在写出玻尔兹曼方程时，要再附加上因粒子进出导致的微观态分布函数变化项：
+\begin{equation}
+\frac{\partial f}{\partial t}=\left(\frac{\partial f}{\partial t}\right)_{\text {扩散 }}+\left(\frac{\partial f}{\partial t}\right)_{\text {漂移 }}+\left(\frac{\partial f}{\partial t}\right)_{\text {散射 }}+\left(\frac{\partial f}{\partial t}\right)_{\text {进出 }}
+\end{equation}
+我们考虑  $\left(\frac{\partial f}{\partial t}\right)_{\text {进出 }}$  的行为。由于我们考虑的是无穷小时间间隔内粒子的进出，故只有边界上的粒子对  $\left(\frac{\partial f}{\partial t}\right)_{\text {进出 }}$  有贡献。在势阱内部，系统仍满足平移对称性，故势阱内部玻尔兹曼方程不变。而对于势阱的边界，  $\left(\frac{\partial f}{\partial t}\right)_{\text {进出 }}$  会造成系统边界条件的改变。
+
+在长时间条件下，总的粒子数改变量相当于，
+\begin{equation}
+  \left( \Delta f \right) _{\text{总}}\left( t \right) =\int_0^t{d\tau \oint_{V\left( \vec{q} \right) <V_0}{d\vec{q}\int_{\mathrm{k}_{0}\left( \vec{q} \right)}^{+\infty}{dk\ \mathcal{A}_nk^{n-1}f\left( \vec{q},k,\tau \right)}}}
+\end{equation}
+其中$\mathrm{k}_{0}(\vec{q}) = \sqrt{2m(V_0-V(\vec{q}))/\hbar^2}$,$\mathcal{A}_n$是n维空间中n-1维单位球面积。
+
+

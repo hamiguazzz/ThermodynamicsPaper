@@ -1,0 +1,12 @@
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb*
+*.log
+*.fls
+*.log
+*.pdf
+*.run.*
+*.*.gz
+*.xdv

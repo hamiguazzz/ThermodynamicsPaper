@@ -1,0 +1,86 @@
+\section{对非禁闭势场中涨落定理的讨论}
+在文献\cite{streissnigWorkFluctuationTheorem2021}
+中，给出了非禁闭势场中的涨落定理：
+\begin{equation}\label{36}
+\left\langle e^{-\beta\left[W_{t}-\int_{t_{0}}^{t}\left(\frac{k_{\mathrm{B}} T}{2 \tau}+\frac{x_{\tau} F\left(x_{\tau}, \lambda_{\tau}\right)}{2 \tau}\right) \mathrm{d} \tau-\Delta G\right]}\right\rangle=1
+\end{equation}
+利用数学上的詹森不等式，我们还可以得到如下结论：
+\begin{equation}\label{37}
+\left\langle W_{t}\right\rangle \geqslant \Delta G+\left\langle\int_{t_{0}}^{t}\left(\frac{k_{0} T}{2 \tau}+\frac{x_{\tau} F\left(x_{\tau}, \lambda_{\tau}\right)}{2 \tau}\right) \mathrm{d} \tau\right\rangle
+\end{equation}
+这个不等式给出了外界对系统做功统计平均值的一个下限。
+
+首先，让我们比较非禁闭势场中涨落定理  $(\ref{36})$  与禁闭势场中的贾金斯基等式：
+\begin{equation}\label{jia}
+\left\langle e^{-\beta(W-\Delta F)}\right\rangle=1
+\end{equation}
+
+我们可以发现，这两个等式在形式上有相似之处，但有两点不同。首先，$(\ref{36})$  比  $(\ref{jia})$  多了一个依赖于轨道的积分项：
+\begin{equation}
+\int_{t_{0}}^{t}\left(\frac{k_{0} T}{2 \tau}+\frac{x_{\tau} F\left(x_{\tau}, \lambda_{\tau}\right)}{2 \tau}\right) \mathrm{d} \tau
+\end{equation}
+其次，$(\ref{36})$  中的  $\Delta G$  取代了  $(\ref{jia})$  中的  $\Delta F$，并且因为  $\Delta G$  中的  $N\left(t, \lambda_{t}\right)$  显含时间，  $\Delta G$  也会显含时间。这些不同点的根源都在于我们最初使用的概率密度分布函数  $P_{GB}$。
+
+下面，我们计算在  $P_{GB}$  分布下  $\Omega_{t}$  的平均值。根据  $\Omega_{t}$  的定义式与  $P_{GB}$  分布下的平均值计算公式，并将  $P_{GB}$  的表达式代入，我们得到：
+\begin{equation}
+\begin{aligned}
+&\left\langle\Omega_{t}\right\rangle_{\mathrm{GB}}=\int_{t_{0}}^{t} \mathrm{~d} \tau\left\langle f\left(x, \tau, \lambda_{\tau}\right)\right\rangle_{\mathrm{GB}} \\
+&=\int_{t_{0}}^{t} \mathrm{~d} \tau \int_{-\infty}^{\infty} \mathrm{d} x f\left(x, \tau, \lambda_{\tau}\right) \frac{e^{-\frac{x^{2}}{4 D \tau}-\beta V\left(x, \lambda_{\tau}\right)}}{N\left(\tau, \lambda_{\tau}\right)}
+\end{aligned}
+\end{equation}
+将朗之万方程代入得
+$$
+\left\langle\Omega_{t}\right\rangle_{\mathrm{GB}}=-\int_{t_{0}}^{t} \mathrm{~d} \tau \frac{1}{N\left(\tau, \lambda_{\tau}\right)} \int_{-\infty}^{\infty} \mathrm{d} x\left(\partial_{t}-L\right) e^{-\frac{x^{2}}{4 D \tau}-\beta V\left(x, \lambda_{\tau}\right)}
+$$
+其中，L是式(\ref{equ:FPoper})定义的福克尔-普朗克算符，将福克尔-普朗克算符表达式代入并积分，得到
+\begin{equation}
+\begin{aligned}
+-&\int_{t_{0}}^{t} \mathrm{~d} \tau \frac{1}{N\left(\tau, \lambda_{\tau}\right)} \int_{-\infty}^{\infty} \mathrm{d} x\left(\partial_{t}-L\right) e^{-\frac{x^{2}}{4 D \tau}-\beta V\left(x, \lambda_{\tau}\right)}\\
+=-&\int_{t_{0}}^{t} \mathrm{~d} \tau \frac{\dot{N}\left(\tau, \lambda_{\tau}\right)}{N\left(\tau, \lambda_{\tau}\right)}\\
+=-&\int_{t_{0}}^{t} d[ln(N\left(\tau, \lambda_{\tau}\right))]\\
+=-&ln\left[\frac{N\left(t, \lambda_{t}\right)}{N\left(t_{0}, \lambda_{t_{0}}\right)}\right]
+\end{aligned}
+\end{equation}
+而这正是  $\Delta G$.因此，  $\left\langle\Omega_ {t}\right\rangle_{\mathrm{GB}}=\Delta G$.  再代入  $\left\langle\Omega_ {t}\right\rangle_{\mathrm{GB}}$  的定义式，我们得到：
+\begin{equation}
+\left\langle W_{t}\right\rangle_{\mathrm{GB}}=\Delta G+\left\langle\int_{t_{0}}^{t}\left(\frac{k_{0} T}{2 \tau}+\frac{x_{\tau} F\left(x_{\tau}, \lambda_{\tau}\right)}{2 \tau}\right) \mathrm{d} \tau\right\rangle_{\mathrm{GB}}
+\end{equation}
+对比这个方程与我们之前得到的不等式  $(\ref{37})$,我们发现这个方程其实就是将不等式  $(\ref{37})$  取了等号。即在准静态近似下，不等式  $(\ref{37})$  会退化为一个等式。我们可以与禁闭势中的情况做一下类比：从禁闭势的贾金斯基涨落定理可以推导出最大功原理：$\Delta F \leq \left\langle W_{t}\right\rangle$,  在准静态近似下，这个不等式也退化为等式  $\Delta F =\left\langle W_{t}\right\rangle$。但如果我们考虑的系统参数  $\lambda_{t}$  是周期性变化的，即  $\lambda_{t}=\lambda_{t+t_{0}}$,  那么禁闭势与非禁闭势的情况会有很大不同。对于禁闭势，在一个周期内，显然有  $\left\langle W_{t_{0}}\right\rangle=0$,  但对于非禁闭势，由于系统没有一个稳定的平衡态，系统总是在进行无休止的耗散，在一个周期内纵然  $\lambda_{t}$  已经复原了，但系统却未必复原，那么  $\left\langle W_{t_{0}}\right\rangle=0$  就不一定总是成立的了。一个很自然的想法是，如果  $\Delta G+\left\langle\int_{t_{0}}^{t}\left(\frac{k_{0} T}{2 \tau}+\frac{x_{\tau} F\left(x_{\tau}, \lambda_{\tau}\right)}{2 \tau}\right) \mathrm{d} \tau\right\rangle_{\mathrm{GB}}<0$  会怎样呢？此时  $\left\langle W_{t_{0}}\right\rangle=0$  并没有一个正的下限。目前的解释是：此时外界不需要对系统做功，系统即可自发地发生演化。
+
+下面，让我们讨论等式  $(\ref{36})$  右端第二个积分的物理含义，我们推断，这一项积分可以被诠释为因系统的扩张而导致的能量变化，也就是体积功。对一维禁闭势中的布朗粒子，我们可以定义压强：
+\begin{equation}\label{Pi}
+\Pi=\frac{1}{L}\left[k_{0} T+\langle x F(x)\rangle\right]
+\end{equation}
+其中，  L 是系统的总长度，  F(x)  是外势场给布朗粒子施加的外力。
+
+当我们试图将上式推广至非禁闭势中时，我们发现由于系统没有一个明确的边界，系统的总长度是不好定义的。但我们考虑在有限时间内，布朗粒子的扩散范围是有限的。因此，我们将系统的总长度定义为布朗粒子的扩散尺度：
+\begin{equation}
+L_{\tau}=\sqrt{2 D \tau}
+\end{equation}
+这是一个随着系统演化时间而跑动的参量，并满足如下的微分关系：  $d \tau=\frac{L \tau}{D} d L \tau $.   应用  $L_{\tau}$  并类比  $(\ref{Pi})$,  我们可以定义非禁闭势中布朗粒子的压强：
+\begin{equation}\label{pressure}
+p_{\tau}:=\frac{1}{L_{\tau}}\left[k_{0} T+F\left(x_{\tau}, \lambda_{\tau}\right) x_{\tau}\right]
+\end{equation}
+相应地，我们可以定义体积功：
+\begin{equation}\label{vwork}
+  W_{V}:=\int_{L_{t_{0}}}^{L_{t}} p_{\tau} \mathrm{d} L_{\tau}
+\end{equation}
+利用  $L_{\tau}=\sqrt{2 D \tau}$  我们可以计算出
+\begin{equation}
+\int_{L_{t_{0}}}^{L_{t}} p_{\tau} \mathrm{d} L_{\tau}=\int_{t_{0}}^{t}\left(\frac{k_{0} T}{2 \tau}+\frac{x_{\tau} F\left(x_{\tau}, \lambda_{\tau}\right)}{2 \tau}\right) \mathrm{d} \tau
+\end{equation}
+等式右侧的表达式正好是 $(\ref{36})$  右端第二个积分。因此，我们得到
+\begin{equation}
+\left\langle e^{-\beta\left[W_{t}-\int_{L t_{0}}^{L_{t}} p_{\tau} \mathrm{d} L_{\tau}-\Delta G\right]}\right\rangle=1
+\end{equation}
+以及不等式
+\begin{equation}
+\left\langle W_{t}\right\rangle \geqslant \Delta G+\left\langle\int_{L_{t_{0}}}^{L_{t}} p_{\tau} \mathrm{d} L_{\tau}\right\rangle
+\end{equation}
+由此可见，式\ref{36} 右端第二个积分确实可以被诠释为体积功。
+
+接下来，让我们考虑在原来的非禁闭势场  $V(x, \tau)$  上再添加一个谐振子势，使其成为一个禁闭势场  $\tilde{V}(x, \tau)$：
+\begin{equation}
+\tilde{V}(x, \tau)=V(x, \tau)+\frac{x^{2}}{4 D \tau} k_{0} T
+\end{equation}
+这样一个禁闭势  $\tilde{V}(x, \tau)$  与非禁闭势  $V(x, \tau)$ 中的布朗粒子具有相同的 概率密度分布函数  $P_{GB}$  ，因此它们是不可区分的。

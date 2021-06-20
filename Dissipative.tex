@@ -1,0 +1,74 @@
+\section{涨落耗散定理}
+根据以上讨论，我们尝试在一维布朗运动的情况下建立涨落耗散定理。定理的建立主要依赖于坐标空间的位置分布函数。
+
+在长时间演化后，系统可以认为已经达到平衡状态，可以用分布函数描述系统的状态。根据当前问题中分布函数式(\ref{equ:PDF})
+的形式，我们仿照此书\cite{zhaoTongJiReWuLiXue2019}中
+的方法，求出其在线性响应下的涨落关系。
+
+系统中共轭的外力$f$和位移$x$对能量的影响，在线性响应的情况下可以记为
+\begin{equation}
+    E(x)=E_0(x)-xf
+\end{equation}
+因此，在附加较小外力的情况下，分布函数会变为
+\begin{equation}
+    P(x, t) =\frac{e^{-\frac{x^{2}}{4 D t}-\beta V(x)+xf}}{N(t)}
+    \label{equ:pdf-xf}
+\end{equation}
+其中$\beta=\mathrm{k}_{0} T$。
+
+由于我们研究的系统处于势能函数底部范围附近，我们可以将势能函数在最低点做泰勒展开，
+\begin{equation}
+    V(x)=V_0+V_1 x+V_2/2 x^2 + \mathcal{O}(x^3)
+\end{equation}
+代入式(\ref{equ:pdf-xf})并对比标准正态分布公式可以得到在力$f$扰动的存在的情况下，位移$x$发生的响应为
+\begin{equation}
+    \left\langle x \right\rangle = (\beta f - \beta V_1)\cdot\left( \frac{1}{2Dt} + \beta V_2\right)^{-1}
+    \label{equ:ang-x}
+\end{equation}
+
+\begin{equation}
+    \left\langle x^2 \right\rangle = \left( \frac{1}{2Dt} + \beta V_2\right)^{-1}
+\end{equation}
+
+因此，可以得到
+\begin{equation}
+    \frac{\left\langle x \right\rangle}{\left\langle x^2 \right\rangle} = \beta (f - V_1)
+    \label{equ:ang-x-x2}
+\end{equation}
+
+可以发现，相对比标准的玻尔兹曼分布，我们会有一个附加项。附加项的存在是可以理解的，考虑在一个力的扰动下，线性响应的位移在势场中产生了非平凡的效果，总的效果相当于抵消了一部分外部力引起的扰动。
+
+在线性响应条件下, 位移$x$对力$f$产生的响应可以表达为
+$$
+\left\langle x(t) \right\rangle_{f}=\int_{-\infty}^{\infty} \chi\left(t-t^{\prime}\right) f\left(t^{\prime}\right) \mathrm{d} t^{\prime}
+$$
+
+其中$\chi(t)=\Theta(t) y(t)$，$\Theta(t)$表示阶跃函数。
+
+由于Kramers–Kronig关系\cite{kramersDiffusionLumierePar1927,kronigTheoryDispersionXrays1926}的结果只依赖于线性响应的假设，因此其仍有
+\begin{equation}
+    \operatorname{Re} \tilde{\chi}(\omega)=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \mathrm{d} \omega^{\prime} \frac{\tilde{y}_{0}\left(\omega^{\prime}\right)}{\omega^{\prime}-\omega}=\frac{1}{\pi} \int_{-\infty}^{\infty} \mathrm{d} \omega^{\prime} \frac{\operatorname{Im} \tilde{\chi}\left(\omega^{\prime}\right)}{\omega^{\prime}-\omega}
+    \label{equ:Kramers–Kronig}
+\end{equation}
+
+另外Wiener–Khinchin定理\cite{wienerGeneralizedHarmonicAnalysis1930}不涉及分布函数的具体形式，因此仍有
+
+\begin{equation}
+    \left\langle x^{2}\right\rangle=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \mathrm{d} \omega\left\langle|\tilde{x}(\omega)|^{2}\right\rangle=\frac{1}{2 \pi} \int_{-\infty}^{\infty} \mathrm{d} \omega \tilde{C}_{x x}(\omega)
+    \label{equ:Wiener–Khinchin}
+\end{equation}
+
+假设力$f_t(t) = f\cdot\theta(1-t)$。在线性响应的情况下，$f$产生的响应有$\langle x\rangle_{f}=f \operatorname{Re} \tilde{\chi}(0)$，但同时考虑到$V$引起的对$f$引起变化的减弱，综合考虑式子(\ref{equ:ang-x})可以得到
+
+\begin{equation}
+    \langle x\rangle_{f}=(f-V_1) \operatorname{Re} \tilde{\chi}(0)
+    \label{equ:ang-x-respone}
+\end{equation}
+
+因此，可以综合式(\ref{equ:ang-x-x2},\ref{equ:ang-x-respone},\ref{equ:Kramers–Kronig},\ref{equ:Wiener–Khinchin})得到涨落耗散定理：
+
+\begin{equation}
+    \tilde{C}_{x x}(\omega)=2 k_{0} T \frac{\operatorname{Im} \tilde{\chi}(\omega)}{\omega}
+\end{equation}
+
+在此系统做如上近似之后，仍然有涨落耗散定理成立。

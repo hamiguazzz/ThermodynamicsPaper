@@ -1,0 +1,77 @@
+\documentclass[a4paper,12pt]{ctexart}
+%Coded UTF-8, To compile, use xelatex->biber->xelatex->xelatex
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{mathrsfs}
+\usepackage[url = false, doi = false, backend=biber,style=gb7714-2015,gbalign=gb7714-2015,gbpub=false,gbmedium=false]{biblatex} 
+\addbibresource{ref.bib}
+\addbibresource{ref2.bib}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{titling}  
+\usepackage{multicol}
+\usepackage{booktabs} 
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{linkbordercolor=blue,anchorcolor=blue,citecolor=green}
+\usepackage{multirow} 
+\usepackage{stfloats}
+\usepackage{enumerate}
+\usepackage[top=1.25in, bottom=1.25in, left=1.5in, right=1.5in]{geometry}
+\title{建立非禁闭势场中非平衡态统计的尝试}
+\author{蔡智明，江浩楠，李昊天，陆雨航，王乾朔，周子正}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \noindent\rule{\textwidth}{0.5pt}
+
+    {\heiti \noindent \textbf{摘要}\ \ } 
+    {\kaishu 一般讨论的宏观系统相当于放置在具有有限体积的紧闭无限深势阱内部。本文讨论了非禁闭势场中存在的问题，尝试讨论了这种情况下的弛豫过程，在一维布朗运动背景下讨论了涨落定理、涨落耗散定理，通过数值方法对结果进行了一定程度的检验，并讨论了研究的局限性。}
+
+    {\heiti \noindent \textbf{关键词}\ \ } {\kaishu \small 非禁闭势能，非平衡统计，一维布朗运动，涨落定理，涨落耗散定理}
+
+    \noindent\rule{\textwidth}{0.5pt}
+
+    %蔡写一下平衡部分，把题目背景也写一下
+    %江王写一下Brownian部分，引入布朗运动方程，参考Aghion..重点讲pdf为啥是这个形式
+    %周写一下涨落耗散定理
+    %李写一下具体计算，把涨落定理形式给出来。对一般形式引用Strei..后面的结果。蔡简单解释一下附加项
+    %周陆共同完成一下模拟计算，主要是分布结果，涨落定理..
+    %周/陆写一下结论
+    %蔡你找个人和你一起写一下讨论，主要包括涨落耗散定理高阶V导数。利用了布朗运动的局限性。并且简单讨论一下相互作用是1/r的问题。
+
+
+    %各部分同学去掉自己部分注释尝试编译
+ 
+    \input{Introduction.tex} 
+    \input{Equilibrium.tex}
+    \input{Brownian.tex}
+    \input{Fluctuation.tex}
+    \input{Simulation.tex}
+    \input{Fluc_diss.tex}
+    \input{Dissipative.tex}
+    \input{Conclusion.tex}
+    \input{Discussion.tex}
+    \input{Final.tex}
+
+    \newpage
+
+    \title{An Attempt to Establish Non-equilibrium Statistics in Non-confined Potential Field}
+    \author{Cai Zhiming, Jiang Haonan, Li Haotian, \\Lu Yuhang,Wang Qianshuo, Zhou Zizheng}
+    \date{\today}
+    \ctexset{today=old}
+
+    \maketitle
+
+    \noindent\rule{\textwidth}{0.5pt}
+
+    {\heiti \noindent \textbf{Abstract}\ \ } 
+    {\kaishu The generally discussed system in thermodynamics is equivalent to being placed inside a confined infinitely deep potential well with a finite volume. This article discusses the systems in the non-confined potential field, tries to discuss the relaxation process in this case, builds the fluctuation theorem and the fluctuation dissipation theorem under the model of one-dimensional Brownian motion, and analyzes the results by numerical methods, while discussing the limitation of this work.}
+
+    {\heiti \noindent \textbf{Keywords}\ \ } {\kaishu 
+    Non-confined potential field, Non-equilibrium statistics, One-dimensional Brownian motion, Fluctuation theorem, Fluctuation dissipation theorem
+    }
+
+\end{document}
