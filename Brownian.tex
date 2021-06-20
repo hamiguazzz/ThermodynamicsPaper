@@ -1,15 +1,14 @@
-\section{一维布朗运动}
-%TODO
+
 
 \section{一维布朗运动的分布函数}
-我们接下来尝试讨论一维布朗运动的分布函数，令
-$\mathcal{O}[x(t)]=I\left(x_{1}<x(t)<x_{2}\right)$表示单个粒子在$\left(x_{1}, x_{2}\right)$之间存在的时间，如果满足括号内的条件则$I(\cdots)=1$，不满足则为0.
+我们接下来尝试讨论一维布朗运动的分布函数。记
+$\mathcal{O}[x(t)]=I\left(x_{1}<x(t)<x_{2}\right)$  为指标函数，  $I\left(x_{1}<x(t)<x_{2}\right)$ 的定义是：如果满足括号内的条件则$I(\cdots)=1$，不满足则为0。因此， $I\left(x_ {1}<x(t)<x_{2}\right)$  可以用来表示粒子是否在  $\left(x_{1}<x(t)<x_{2}\right)$  区域内。
 因此可以沿着粒子的轨迹$x(t)$，通过$I(\cdots)$在值0到1之间的变换，相应的得到粒子是否在区域$\left(x_{1}, x_{2}\right)$中。而这个可观测值I的集合平均，
 可以表示为：
 \begin{equation}
 \left\langle I\left(x_{1}<x(t)<x_{2}\right)\right\rangle=\int_{0}^{\infty} I\left(x_{1}<x<x_{2}\right) P_{t}(x) \mathrm{d} x \sim \int_{x_{1}}^{x_{2}} e^{-\beta V(x)} / \mathcal{Z}_{t}\mathrm{d}x
 \end{equation}
-当系统处于热平衡时，该式即变为粒子出现在区间$\left(x_{1}, x_{2}\right)$ 的概率，粒子在该区域内停留的时间记为滞留时间：$t_{x_{1}<x<x_{2}}$
+当系统处于热平衡时，该式即变为粒子出现在区间$\left(x_{1}, x_{2}\right)$ 的概率，粒子在该区域内停留的时间记为滞留时间：$t_{x_{1}<x<x_{2}}$.  
 经过一段长时间的观测，由Boltzmann测度可得：
 \begin{equation}
 \lim _{t \rightarrow \infty}\frac{t_{x_{1}<x<x_{2}}}{ t}=\frac{\int_{x_{1}}^{x_{2}} e^{-\beta V(x)} \mathrm{d} x}{Z}
@@ -30,22 +29,24 @@ $\mathcal{O}[x(t)]=I\left(x_{1}<x(t)<x_{2}\right)$表示单个粒子在$\left(x_
 \left\langle\frac{t_{x_{1}<x<x_{2}}}{t}\right\rangle \sim \frac{1}{t} \int_{0}^{t} \mathrm{~d} t \frac{\int_{x_{1}}^{x_{2}} e^{-\beta V(x)} \mathrm{d} x}{\mathcal{Z}_{t}}=
 2 \frac{\int_{x_{1}}^{x_{2}} \exp [-\beta V(x)] \mathrm{d} x}{\mathcal{Z}_{t}}
 \end{equation}
-2倍的因子是时间积分的结果，由于长时间的限制，下标可以写作0。
+2倍的因子是时间积分的结果，由于我们取了长时间极限，这里的积分下限可以近似为0.
 现在考虑的情况为一维情况，当x趋于远处，势趋于平坦的势阱。可以界定一个范围$l_{1}$，当$x>l_{1}$时，
 将该区域的势能视为0，即代表在$0<x<l_{1}$处，并且有$\exp \left(-x^{2} / 4 D t\right) \sim 1$。
-由粒子的扩散性质，在$0\sim l_{1}$处。粒子由势阱中逃逸，向束缚力趋于零的区域扩散。（需要更改）
+2倍的因子是时间积分的结果，由于我们取了长时间极限，这里的积分下限可以近似为0.
 但是在$x>l_{1}$区域的粒子同时也会向着内部区域扩散，从而重新返回到非零势能区域内。
-这说明任何粒子，无论粒子到达了哪个区域当中，都会回归到$x<（l_{1}）$区域内。那么以$N\gg1$的粒子实验，经过有限时间后总可以在$（x>l_{1}）$以外的区域发现它，也总可以观察到粒子的返回，所以在边界$（x=l_{1}）$附近总有一部分不可忽略的粒子存在。
+这说明任何粒子，无论粒子到达了哪个区域当中，都会回归到$x<(l_{1})$区域内。那么以$N\gg1$的粒子实验，经过有限时间后总可以在$(x>l_{1})$以外的区域发现它，也总可以观察到粒子的返回，所以在边界$(x=l_{1})$附近总有一部分不可忽略的粒子存在。
 （与本文所讨论的模型相符：经过有限长的时间，由于边界是时间的二分之一次方形式，边界总可以到达足够的长度使得所有粒子回归的概率为1。）（可以更改）
-现在考虑一个可观察的时间$\mathcal{O}[x(t)]$，
-对于玻尔兹曼因子它是可积分的，那么有：\begin{equation}
-\langle\mathcal{O}(x)\rangle=\frac{\int_{0}^{\infty} \mathcal{O}(x) \exp [-\beta V(x)] \mathrm{d} x}{\mathcal{Z}_{t}}
-\end{equation}
-时间总体平均值为：
+现在考虑一个可观测量  $\mathcal{O}[x(t)]$  ，要求它对玻尔兹曼因子是可积的。我们可以得到系综平均的时间平均：
 \begin{equation}
 \langle\overline{\mathcal{O}[x(t)]}\rangle=2\langle\mathcal{O}(x)\rangle
 \end{equation}
-2倍的因子实际为扩散性质的结果，它直接导致对时间相关配方函数的积分。这其实是伯克霍夫定律的推广（细说一下伯克霍夫定律）。
+
+其中，系综平均值定义为：
+
+\begin{equation}
+\langle\mathcal{O}(x)\rangle=\frac{\int_{0}^{\infty} \mathcal{O}(x) \exp [-\beta V(x)] \mathrm{d} x}{\mathcal{Z}_{t}}
+\end{equation}
+2倍的因子实际为扩散性质的结果，它直接导致对时间相关配方函数的积分。这其实是伯克霍夫定律的推广。
 而这个时间总体平均值等于长时间限制中的整体平均。
 
 之前提到过，时间平均值随着粒子的轨迹变化，讨论在不同轨迹间的波动。
@@ -53,25 +54,24 @@ $\mathcal{O}[x(t)]=I\left(x_{1}<x(t)<x_{2}\right)$表示单个粒子在$\left(x_
 \begin{equation}
 \mathcal{O}[x(t)]=I\left(x_{1}<x(t)<x_{2}\right)
 \end{equation}
-出于简单，令$x_{1}=0$，则$\left(x_{1}, x_{2}\right)$变为了$\left(0, x_{2}\right)$。定义滞留时间$\tau^{\mathrm{in}}$记为\begin{equation}
+出于简单，令$x_{1}=0$，则$\left(x_{1}, x_{2}\right)$变为了$\left(0, x_{2}\right)$。在满足  $
 I\left(x_{1}<x(t)<x_{2}\right)=1
-\end{equation}
-离散时间$\tau^{\mathrm{out}}$当$I\left(x_{1}<x(t)<x_{2}\right)=0$。
+$  的区域  $\left(x_{1}<x(t)<x_{2}\right)$，我们可以记滞留时间为  $\tau^ {\mathrm{in}}$.而在满足  $I\left(x_ {1}<x(t)<x_{2}\right)=0$  的区域，我们记滞留时间  为$\tau^{\mathrm{out}}$.
 因此在
 $\left(0, x_{2}\right)$
 区域内粒子处于两种状态的序列为：
 \begin{equation}
 \left\{\tau_{1}^{\mathrm{in}}, \tau_{1}^{\mathrm{out}}, \tau_{2}^{\mathrm{in}}, \tau_{2}^{\mathrm{out}}, \cdots\right\}
 \end{equation}
-由于朗之万方程的时间相关性随时间的增长成指数倍形式下降，因此这些时间可被视为互相独立，相同分布的随机变量。
-使用$\psi_{\text {out } / \text { in }}(\tau)$来作为$\tau^{\mathrm{out}} 和\tau^{\mathrm{in}}$概率密度函数，在平坦势的情形下$\tau^{\mathrm{out}} $的概率密度函数正比于$t^{-3/2}$($\tau^{out}\gg\tau^{in}$所以$\tau^{out}\sim t$)。
-对于固定的测量时间t而言，假设粒子由内部区域到外部区域的次数总共有n 次，那么当t很大时，由于离散时间远大于滞留时间。
+由于朗之万方程的时间相关性随时间的增长成指数倍形式下降，因此这些时间可被视为互相独立且相同分布的随机变量。
+使用$\psi_{\text {out } / \text { in }}(\tau)$来作为$\tau^{\mathrm{out}}$ 和  $\tau^ {\mathrm{in}}$概率密度函数，在平坦势的情形下$\tau^{\mathrm{out}} $的概率密度函数正比于$t^{-3/2}$($\tau^{out}\gg\tau^{in}$,所以$\tau^{out}\sim t$)。
+对于固定的测量时间t而言，假设粒子由内部区域到外部区域的次数总共有n 次，那么当t很大时，由于  $\tau^{out}\gg\tau^{in}$,
 因此n的分布由离散时间来确定。
-可以重新定义：$I\left(x_{1}<x(t)<x_{2}\right)$的时间平均值记为滞留时间的总和除以测量时间t：
+可以重新定义：$I\left(x_{1}<x(t)<x_{2}\right)$的时间平均值记为：
 \begin{equation}
 \bar{I}=\sum_{i=1}^{n} \tau_{i}^{\mathrm{in}} / t
 \end{equation}
-注意有效逗留时间：
+注意有效滞留时间：
 \begin{equation}
 \left\langle\tau_{\mathrm{eff}}\right\rangle=\int_{0}^{t} \tau \psi_{\mathrm{out}}(\tau) \mathrm{d} \tau \propto t^{1 / 2}
 \end{equation}
@@ -83,7 +83,7 @@ $\left(0, x_{2}\right)$
 \langle\bar{I}\rangle \simeq\left\langle\tau^{\mathrm{in}}\right\rangle\langle n\rangle / t
 \end{equation}
 有时间平均值与$t^{-1/2}$成正比。
-现在考虑测量时间t很长时的情况，对于任何j≠i，都有：
+现在考虑测量时间t很长时的情况，对于任何 $j≠i$，都有：
 \begin{equation}
 \left\langle\left(\tau_{i}^{\mathrm{in}}\right)^{2}\right\rangle=\left\langle\left(\tau_{j}^{\mathrm{in}}\right)^{2}\right\rangle
 \end{equation}
@@ -100,29 +100,29 @@ $\left(0, x_{2}\right)$
 \begin{equation}
 \left\langle(\bar{I})^{2}\right\rangle-\langle\bar{I}\rangle^{2}=\frac{\left\langle\left(t_{r}\right)^{2}\right\rangle-\left\langle t_{r}\right\rangle^{2}}{t^{2}}=\frac{\left\langle n^{2}\right\rangle-\langle n\rangle^{2}}{t^{2}}\left\langle\tau^{\mathrm{in}}\right\rangle^{2}+\frac{\langle n\rangle}{t^{2}} \underbrace{\left[\left\langle\left(\tau^{\mathrm{in}}\right)^{2}\right\rangle-\left\langle\tau^{\mathrm{in}}\right\rangle^{2}\right]}_{\operatorname{Var}\left(\tau^{\mathrm{im}}\right)}
 \end{equation}
-由前文得到的n与t的关系，发现第二项相比于第一项可以忽略不计，再由
+由前文得到的n与t的关系，发现第二项相比于第一项可以忽略不计。我们使用如下的方式重新归一化变量：
 \begin{equation}
-\langle\bar{I}\rangle \simeq\left\langle\tau^{\mathrm{in}}\right\rangle\langle n\rangle / t
+\langle\bar{I}\rangle \sim\left\langle\tau^{\mathrm{in}}\right\rangle\langle n\rangle / t
 \end{equation}
 可以得到：
 \begin{equation}
 \frac{\left\langle\bar{I}^{2}\right\rangle-\langle\bar{I}\rangle^{2}}{\langle\bar{I}\rangle^{2}} \rightarrow \frac{\left\langle n^{2}\right\rangle-\langle n\rangle^{2}}{\langle n\rangle^{2}}
 \end{equation}
-将其继续到高阶矩，有：
+重复以上分析至高阶项，有：
 \begin{equation}
 \frac{\bar{I}}{\langle\bar{I}\rangle} \rightarrow \frac{n}{\langle n\rangle} \equiv \eta
 \end{equation}
-这表明在$\left(x_{1}, x_{2}\right)$区域内的滞留时间比上平均滞留时间，实际上等于在其平均值上粒子从滞留态到离散态的数目。可以得到$0<\eta $的概率密度函数\cite{godrecheStatisticsOccupationTime2001}，结合$\psi_{\text {out }}(\tau) \propto \tau^{-3 / 2}$
+这表明在$\left(x_{1}, x_{2}\right)$区域内的滞留时间比上平均滞留时间，实际上等于在其平均值上粒子从滞留态到离散态的数目。可以得到$0<\eta $的概率密度函数Probability Density Function(PDF)\cite{godrecheStatisticsOccupationTime2001}，结合$\psi_{\text {out }}(\tau) \propto \tau^{-3 / 2}$
 可以得到：\begin{equation}
 \operatorname{PDF}(\eta)=\frac{2}{\pi} e^{-\eta^{2} / \pi}
 \end{equation}
-虽然它有与高斯中心极限定理有关的形式，但是实际上PDF是关于Mittagle-Leffler分布，它与L有关。
+虽然它有与高斯中心极限定理有关的形式，但是实际上PDF是关于Mittagle-Leffler分布，它与  L$\textrm{\'{e}}$vy  统计有关。
 Aaronson-Darlin-Kac定理预测在无穷测度的过程的时间平均分布将由Mittag-Leffler分布给出：
 \begin{equation}
-\mathscr{N}_{\alpha}(\eta)=\frac{\Gamma^{1 / \alpha}(1+\alpha)}{\alpha \eta^{1+1 / \alpha}} l_{\alpha, 0}\left[\frac{\Gamma^{1 / \alpha}(1+\alpha)}{\eta^{1 / \alpha}}\right], l_{\alpha, 0}(\#)
+\mathscr{M}_{\alpha}(\eta)=\frac{\Gamma^{1 / \alpha}(1+\alpha)}{\alpha \eta^{1+1 / \alpha}} l_{\alpha, 0}\left[\frac{\Gamma^{1 / \alpha}(1+\alpha)}{\eta^{1 / \alpha}}\right], l_{\alpha, 0}(\#)
 \end{equation}
-为利维密度，指数α由$\psi_{\text {out }}(\tau) \propto \tau^{-1-\alpha}$ 给出，此时α=1/2，
-那么在我们的物理模型下考虑n个独立的同分布随机变量，根据levy中心极限定理\cite{metzlerRandomWalkGuide2000}，相应的概率密度函数Probability Density Function(PDF)为：\begin{equation}
+为单侧  L$\textrm{\'{e}}$vy  密度，指数  $\alpha$  由$\psi_{\text {out }}(\tau) \propto \tau^{-1-\alpha}$ 给出，此时  $\alpha$=1/2，
+那么在我们的物理模型下考虑n个独立的同分布随机变量，根据  L$\textrm{\'{e}}$vy  中心极限定理\cite{metzlerRandomWalkGuide2000}，相应的概率密度函数为指数  $1/2$  的单侧  L$\textrm{\'{e}}$vy  密度：\begin{equation}
 l_{1 / 2,0}(\tau)=\frac{1}{2 \sqrt{\pi}} \tau^{-3 / 2} \exp \left(-\frac{1}{4 \tau}\right)
 \end{equation}
 现在引入随机变量$y=\sum_{i=1}^{n} \tau_{i} / n^{2}$,由于
@@ -131,7 +131,7 @@ t=\sum_{i=1}^{n} \tau_{i}
 \end{equation}
 因此$y=t / n^{2}$，
 可以得到PDF关于y的函数形式为：
-\begin{equation}
+\begin{equation}\label{PDFjiang}
 \operatorname{PDF}(n)=\operatorname{PDF}(y)\left|\frac{\mathrm{d} y}{\mathrm{~d} n}\right|=
 l_{1 / 2,0}\left(\frac{t}{n^{2}}\right)\left|\frac{2 t}{n^{3}}\right|=\frac{1}{\sqrt{\pi t}} \exp \left(-\frac{n^{2}}{4 t}\right)
-\end{equation}
+\end{equation} 

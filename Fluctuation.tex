@@ -42,13 +42,14 @@ L=\left(D \partial_{x}^{2}+\frac{1}{\gamma} \partial_{x} V^{\prime}\right)
 \end{equation}
 对于一个固定的$\lambda_t$和足够长的时间下，$P(x,t)$会收敛于
 \begin{equation}
-P_{\mathrm{GB}}\left(x, t, \lambda_{t}\right)=\frac{e^{-\frac{x^{2}}{4 D \tau}-\beta V\left(x, \lambda_{t}\right)}}{N\left(t, \lambda_{t}\right)}
+P_{\mathrm{GB}}\left(x, t, \lambda_{t}\right)=\frac{e^{-\frac{x^{2}}{4 D t}-\beta V\left(x, \lambda_{t}\right)}}{N\left(t, \lambda_{t}\right)}
 \label{equ:PDF}
 \end{equation}
 其中$\beta=\frac{1}{\mathrm{k}_{0}T}$，$N(t,\lambda_t)$是归一化常数，满足
 \begin{equation}
 N\left(t, \lambda_{t}\right)=\int_{-\infty}^{\infty} e^{-\frac{x^{2}}{4 D t}-\beta V\left(x, \lambda_{t}\right)} \mathrm{d} x
 \end{equation}
+我们将(\ref{equ:PDF})与之前得到的式(\ref{PDFjiang})对比，我们发现两者都有一个高斯型的因子，只不过这里在e指数上多了一项与势场有关的因子。
 
 考虑一个特殊情况：在$t=0$时，粒子全部被置于势阱内。从$t=0$到$t=t_0$这段时间内，系统处于弛豫使得在$t=t_0$时概率密度大致可以由$P_{\mathrm{GB}}(x,t_0)$给出。从$t=t_0$到$t=t_1$，势场由于外部控制的参数$\lambda_t$介入而发生改变，直到$t=t_1$时势场停止变化，系统的概率密度重新回到弛豫过程的分布，如式(\ref{equ:PDF})所示。然而这种弛豫过程不会对最终的结果产生影响，在这种情况下，定义由$\lambda_t$产生的广义力\cite{streissnigWorkFluctuationTheorem2021}
 \begin{equation}

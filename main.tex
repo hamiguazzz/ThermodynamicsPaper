@@ -8,6 +8,7 @@
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage{subfigure}
+\usepackage{float}
 \usepackage{titling}  
 \usepackage{multicol}
 \usepackage{booktabs} 
@@ -18,9 +19,33 @@
 \usepackage{stfloats}
 \usepackage{enumerate}
 \usepackage[top=1.25in, bottom=1.25in, left=1.5in, right=1.5in]{geometry}
+\usepackage{listings}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\lstset{language=Matlab,%
+    breaklines=true,%
+    basicstyle={\ttfamily \small},%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    backgroundcolor=\color{mygray!5},%
+    showstringspaces=false,
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
+
+
+
 \title{建立非禁闭势场中非平衡态统计的尝试}
-\author{蔡智明，江浩楠，李昊天，陆雨航，王乾朔，周子正}
-\date{\today}
+\author{蔡智明，江浩楠，李昊天，陆雨航，王乾朔，周子正\\南开大学物理科学学院}
+\date{2021 年6 月20 日}
 
 
 \begin{document}
@@ -32,6 +57,8 @@
 
     {\heiti \noindent \textbf{关键词}\ \ } {\kaishu \small 非禁闭势能，非平衡统计，一维布朗运动，涨落定理，涨落耗散定理}
 
+    \noindent\rule{\textwidth}{0.5pt}
+    \tableofcontents
     \noindent\rule{\textwidth}{0.5pt}
 
     %蔡写一下平衡部分，把题目背景也写一下
@@ -59,8 +86,8 @@
     \newpage
 
     \title{An Attempt to Establish Non-equilibrium Statistics in Non-confined Potential Field}
-    \author{Cai Zhiming, Jiang Haonan, Li Haotian, \\Lu Yuhang,Wang Qianshuo, Zhou Zizheng}
-    \date{\today}
+    \author{Cai Zhiming, Jiang Haonan, Li Haotian, \\Lu Yuhang,Wang Qianshuo, Zhou Zizheng\\School of Physics, Nankai University}
+    \date{June 20, 2021}
     \ctexset{today=old}
 
     \maketitle
@@ -74,4 +101,7 @@
     Non-confined potential field, Non-equilibrium statistics, One-dimensional Brownian motion, Fluctuation theorem, Fluctuation dissipation theorem
     }
 
+    \newpage
+    \section*{附录：模拟部分代码}
+    \lstinputlisting{codes.m}
 \end{document}
